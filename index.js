@@ -44,7 +44,9 @@ app.get('/meaning', function(req, res) {
 
   // res.send('Hello Seattle\n');
 });
-app.listen(3000);
+// app.listen(3000);
+server =app.listen(process.env.PORT || 3000,function(){
+}),
 console.log('Listening on port 3000...');
 
 

@@ -208,7 +208,7 @@
                     var  xhr = new XMLHttpRequest();
                     word = final_transcript;
                     word = word.trim().toLowerCase();
-                    var url = "http://192.168.2.58:3000/meaning?word="; 
+                    var url = "/meaning?word="; 
                     var final = url.concat(word);
                     console.log(final);
                     xhr.open('GET',final, true);
