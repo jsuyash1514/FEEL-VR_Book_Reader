@@ -244,7 +244,8 @@
                 string = string +j  + ".) "+  response[i].definition + "\n"
                 i++
               }
-              var msg=new  SpeechSynthesisUtterance(string)
+              console.log("sdsddsd"); 
+              var msg=new  SpeechSynthesisUtterance("sdsdsdsdsdsd")
               window.speechSynthesis.speak(msg);
                             //TextToSpeech.talk(string)
                             // msg.onboundary = function(event){NextWord(event.charIndex)}
@@ -252,7 +253,7 @@
 
                             //var player = new talkify.TtsPlayer(); //or new talkify.Html5Player()
                             //player.playText('Hello world');
-                            alert(string)
+                            // alert(string)
                             console.log(response)
                           }
                           else
