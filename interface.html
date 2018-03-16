@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+
+  </head>
+  <body>
+    <a-scene>
+        
+    <a-entity position="0 -15 10" rotation="0 0 0">
+	<a-entity camera look-controls wasd-controls>
+
+		<a-entity position="0 0 -3"
+		geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.08;"
+		material="color: cyan; shader: flat"
+		cursor="maxDistance: 30; fuse: true">
+
+		<a-animation begin="click" easing="ease-in" attribute="scale"
+		fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
+
+		<a-animation begin="fusing" easing="ease-in" attribute="scale"
+		fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="750"></a-animation>
+
+	</a-entity>
+	</a-entity>
+	</a-entity>
+        
+
+      <a-entity light="type:point; castShadow:true;" position="0 1 0"></a-entity>
+
+      <a-assets>
+        <!-- images -->
+        
+        <img id="sw" src="assets/images/MF8K.jpg">
+        <img id="city" src="assets/images/newyork.jpg">
+        <img id="projector" src="assets/images/projector.jpg">
+        <img id="coding" src="assets/images/coding.jpg">
+        <img id="1" src="assets/images/1.jpg">
+        <img id="2" src="assets/images/2.jpg">
+        <img id="3" src="assets/images/3.jpg">
+        <img id="4" src="assets/images/4.jpg">
+        <img id="5" src="assets/images/5.jpg">
+        <img id="6" src="assets/images/6.jpg">
+        <img id="7" src="assets/images/7.jpg">
+        <img id="8" src="assets/images/8.jpg">
+        <img id="logo" src="assets/images/mdg_logo_1.jpg">
+        <img id="feel_logo" src="assets/images/feel_logo.png">
+        <img id="micro" src="assets/images/microphone.png"
+
+      <!-- models -->
+        <a-asset-item id="class-obj" src="assets/models/classroom.obj"></a-asset-item>
+        <a-asset-item id="class-mtl" src="assets/models/classroom.mtl"></a-asset-item>
+        <a-asset-item id="class01-obj" src="assets/models/classroom02.obj"></a-asset-item>
+        <a-asset-item id="class02-mtl" src="assets/models/classroom02.mtl"></a-asset-item>
+
+      </a-assets>
+
+
+      <a-obj-model src="#class01-obj" mtl="#class02-mtl" scale="1 1 1" position="0 -25 0">
+        <a-animation attribute="rotation" begin="mouseenter" end="click"
+             dur="1000"
+             to="0 360 0"
+             repeat="indefinite">
+        </a-animation>
+      </a-obj-model>
+
+      <!-- window view -->
+      <a-image src="#city" position="-48 -5 8" rotation="0 -90 0" scale="35 35 35" width="2" ></a-image>
+
+      <!-- projector -->
+      <!-- <a-image src="#projector" position="2 -3 -22.5" rotation="0 0 0" scale="15 15 15" width="3" height="1.7"></a-image> -->
+
+      <!-- code screenshot -->
+      <a-image  id="pg1" src="#1" position="-10 -3 -22" rotation="0 0 0" scale="13 13 13" width="2" height="3"></a-image>
+      <a-image  id="pg2" src="#2" position="16.5 -3 -22" rotation="0 0 0" scale="13 13 13" width="2" height="3"></a-image>
+      <a-image  id="logo_img" src="#logo" position="-3 5 43" rotation="0 180 0" scale="7 7 7" width="7.5" height="3"></a-image>
+      <a-image  id="logo_img" src="#feel_logo" position="50 -2 2" rotation="0 270 0" scale="20 20 20" ></a-image>
+      <a-image id="microph" src="#micro" position="35 -3 -22" scale="5 5 5"></a-image>
+      <a-box id="prev" position="-9.6 -22 -19.5" width="5" height="0.3" scale="5 5 3" color="#ff0000"></a-box>
+      <a-box id="next" position="15.8 -22 -19.5" width="5" height="0.3" scale="5 5 3" color="#00ff00"></a-box>
+      <a-entity text="value: HelloWorld;" position="-10 -3 -20"></a-entity>
+      <a-entity text="value: Hello, World;" position="-10 -3 -22" width="4" height="4" color="#7BC84A"></a-entity>
+
+
+
+
+
+     
+
+      <!-- <a-plane src="#floor" position="0 0 -4" rotation="-90 0 0" width="50" height="50"></a-plane> -->
+      <a-sky src="#sw"></a-sky>
+      <!-- <a-camera position=" 15 -10 0">
+        <a-cursor color="black"></a-cursor>
+      </a-camera> -->
+
+      <script type="text/javascript">
+      	var i = 0;
+      	document.querySelector('#next').addEventListener('click', function(){
+  		++i;
+  		switch (i) {
+  			case 1 :
+  			document.querySelector('#pg1').setAttribute('src', 'assets/images/3.jpg');
+  			document.querySelector('#pg2').setAttribute('src', 'assets/images/4.jpg');
+  			break;
+  			case 2 :
+  			document.querySelector('#pg1').setAttribute('src', 'assets/images/5.jpg');
+  			document.querySelector('#pg2').setAttribute('src', 'assets/images/6.jpg');
+  			break;
+  			case 3 :
+  			document.querySelector('#pg1').setAttribute('src', 'assets/images/7.jpg');
+  			document.querySelector('#pg2').setAttribute('src', 'assets/images/8.jpg');
+  			break;	
+  			default:
+  			i=3;
+  			break;			
+  																	
+  		}
+  	});
+  	document.querySelector('#prev').addEventListener('click', function(){
+  		--i;
+  		switch (i) {
+  			case 0 :
+  			document.querySelector('#pg1').setAttribute('src', 'assets/images/1.jpg');
+  			document.querySelector('#pg2').setAttribute('src', 'assets/images/2.jpg');
+  			break;
+  			break;
+  			case 1 :
+  			document.querySelector('#pg1').setAttribute('src', 'assets/images/3.jpg');
+  			document.querySelector('#pg2').setAttribute('src', 'assets/images/4.jpg');
+  			break;
+  			case 2 :
+  			document.querySelector('#pg1').setAttribute('src', 'assets/images/5.jpg');
+  			document.querySelector('#pg2').setAttribute('src', 'assets/images/6.jpg');
+  			break;
+  			default:
+  			i=0;
+  			break; 			
+  			
+  		}
+  	});
+
+      </script>
+
+
+
+    </a-scene>
+  </body>
+</html>
