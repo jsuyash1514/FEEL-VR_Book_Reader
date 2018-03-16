@@ -244,8 +244,8 @@
                 string = string +j  + ".) "+  response[i].definition + "\n"
                 i++
               }
-              console.log("sdsddsd"); 
-              var msg=new  SpeechSynthesisUtterance("sdsdsdsdsdsd")
+              console.log("string"); 
+              var msg=new  SpeechSynthesisUtterance(string)
               window.speechSynthesis.speak(msg);
                             //TextToSpeech.talk(string)
                             // msg.onboundary = function(event){NextWord(event.charIndex)}
