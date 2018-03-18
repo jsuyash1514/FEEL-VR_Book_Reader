@@ -2,7 +2,7 @@
 
 VR Book Reader
 
-https://salty-spire-42295.herokuapp.com/home  <-- Project Link (Open it in Google chrome for better experience)
+https://salty-spire-42295.herokuapp.com/home  <-- Project Link (Open it in Google chrome)
 
 
 IDEA
